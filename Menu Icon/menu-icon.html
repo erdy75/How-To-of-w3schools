@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Icon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 90px;
+            height: 20px;
+            background-color: black;
+            margin: 6px 0;
+            transition: all 0.5s;
+        }
+
+        .change .bar1 {
+            transform: rotate(-45deg) translate(-18.38px,18.38px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            transform: rotate(45deg) translate(-18.38px,-18.38px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="menu">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div>
+        <p>自己模仿的时候踩了一个坑，旋转之后的两个bar无法在容器div中居中，使用translate也总是调不好。如下图所示：</p>
+        <div>
+            <img src="images/default.png">
+            <img src="images/vertical26px.png">
+        </div>
+        <p>原因：使用rotate旋转时，坐标轴也跟着旋转，如下图所示：</p>
+        <div>
+            <img src="images/before-rotate.png">
+            <img src="images/after-rotate.png">
+        </div>
+        <p>解决方案：按照旋转之后的坐标轴计算translate的参数。</p>
+    </div>
+    <script>
+        var menu = document.getElementById("menu");
+        menu.onclick = function(){
+            changeState(this);
+        };
+        function changeState(x){
+            x.classList.toggle("change");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tabcontent {
+            padding: 50px;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+        #London {
+            background-color: orange;
+        }
+        #Paris {
+            background-color: green;
+        }
+        #Beijing {
+            background-color: blue;
+        }
+        #Oslo {
+            background-color: red;
+        }
+        h3, p {
+            padding: 10px;
+        }
+        .tablink {
+            border: none;
+            outline: none;
+            width: 25%;
+            float: left;
+            padding: 16px 0;
+            font-size: 20px;
+            background-color: #555;
+            cursor: pointer;
+            color: white;
+            transition: all 0.5s;
+        }
+        .tablink:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabcontent" id="London">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+    <div class="tabcontent" id="Paris">
+        <h3>Paris</h3>
+        <p>Paris is the capital city of France.</p>
+    </div>
+    <div class="tabcontent" id="Beijing">
+        <h3>Beijing</h3>
+        <p>Beijing is the capital city of China.</p>
+    </div>
+    <div class="tabcontent" id="Oslo">
+        <h3>Oslo</h3>
+        <p>Oslo is the capital city of Norway.</p>
+    </div>
+    <button class="tablink">London</button>
+    <button class="tablink">Paris</button>
+    <button class="tablink" id="defaultOpen">Beijing</button>
+    <button class="tablink">Oslo</button>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tablink");
+        for (var i = 0; i < tablinks.length; i++){
+            tablinks[i].onclick = function(e){
+                var id = e.target.textContent;
+                var self = this;
+                (function(id, self){
+                    displayTab(id, self);
+                })(id, self);
+            };
+        }
+        function displayTab(id,self){
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            var target = document.getElementById(id);
+            target.style.display = "block";
+            self.style.backgroundColor = getComputedStyle(target)["backgroundColor"];
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>

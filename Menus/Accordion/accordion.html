@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Collapsibles/Accordion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        button.accordion {
+            width: 100%;
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            text-align: left;
+            padding: 18px;
+            border: none;
+            outline: none;
+            transition: all 0.5s;
+        }
+
+        button.accordion.active, button.accordion:hover {
+            background-color: #ccc;
+        }
+
+        div.panel {
+            background-color: white;
+            padding: 18px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="accordion">Section1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button class="accordion">Section2</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button class="accordion">Section3</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <script>
+        var accordions = document.getElementsByClassName("accordion");
+
+        for (var i = 0; i < accordions.length; i++){
+            accordions[i].onclick = function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block"){ //第一次点击时style.display是""，这样会使得其变为block
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            };
+            
+        }
+    </script>
+</body>
+</html>

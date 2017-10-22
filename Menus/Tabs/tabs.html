@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab {
+            border: 1px solid #ccc;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .tablinks {
+            border: none;
+            outline: none;
+            float: left;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: all 0.5s;
+            background-color: inherit;
+        }
+
+        .tablinks:hover {
+            background-color: #ddd;
+        }
+
+        .tab .active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            display: none;
+            animation: fade 1s;
+        }
+
+        .closeTab {
+            float: right;
+            cursor: pointer;
+        }
+
+        .closeTab:hover {
+            color: red;
+        }
+
+        h3, p{
+            padding: 5px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            } 
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks">London</button>
+        <button class="tablinks">Paris</button>
+        <button class="tablinks" id="defaultOpen">Beijing</button>
+    </div>
+    <div class="tabcontent" id="London">
+        <span class="closeTab">x</span>
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+    <div class="tabcontent" id="Paris">
+        <span class="closeTab">x</span>
+        <h3>Paris</h3>
+        <p>Paris is the capital city of France.</p>
+    </div>
+    <div class="tabcontent" id="Beijing">
+        <span class="closeTab">x</span>
+        <h3>Beijing</h3>
+        <p>Beijing is the capital city of China.</p>
+    </div>
+    <script>
+
+        var tablinks = document.getElementsByClassName("tablinks");
+        for (var i = 0; i < tablinks.length; i++){
+            tablinks[i].onclick = function(e){
+                displayCity(e.target.textContent);
+                e.target.classList.add("active");
+            };
+        }
+
+        var closeTab = document.getElementsByClassName("closeTab");
+        for (var i = 0; i < closeTab.length; i++){
+            closeTab[i].onclick = function(e){
+                var element = e.target.parentElement;
+                element.style.display = "none";
+                for (var i = 0; i < tablinks.length; i++){
+                    if (tablinks[i].textContent === element.getAttribute("id")){
+                        tablinks[i].classList.remove("active");
+                    }
+                }
+            }
+        }
+
+        document.getElementById("defaultOpen").click();
+
+        function displayCity(id){
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            var tablinks = document.getElementsByClassName("tablinks");
+
+            for (var i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+
+            for (var i = 0; i < tablinks.length; i++){
+                tablinks[i].classList.remove("active");
+            }
+
+            document.getElementById(id).style.display = "block";
+        }
+    </script>
+</body>
+</html>

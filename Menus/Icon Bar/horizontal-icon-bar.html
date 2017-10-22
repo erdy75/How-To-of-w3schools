@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Horizontal Icon Bar</title>
+    <link rel="stylesheet" href="../../font-awesome-4.7.0/css/font-awesome.min.css"> <!-- awesome图标库 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .icon-bar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto; /*清除浮动*/
+        }
+        a {
+            float: left;
+            width: 20%;
+            text-align: center;
+            padding: 12px 0;
+            color: white;
+            font-size: 36px; /*更改图标大小*/
+            transition: all 0.5s;
+        }
+        a:hover {
+            background-color: #000;
+        }
+        .active {
+            background-color: #4caf50 !important; /*!important会使作用于.active的:hover伪类失效，原因是!important使得.active中的background-color优先级最高，因此:hover中的background-color不起作用了*/
+        }
+    </style>
+</head>
+<body>
+    <div class="icon-bar">
+        <a href="#" class="active"><i class="fa fa-home"></i></a>
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="#"><i class="fa fa-envelope"></i></a>
+        <a href="#"><i class="fa fa-globe"></i></a>
+        <a href="#"><i class="fa fa-trash"></i></a>
+    </div>
+</body>
+</html>

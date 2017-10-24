@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Full screen overlay Navigation Downwords</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #myNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.6);
+            margin-top: -100%;
+            transition: margin-top 1s;
+        }
+        #myNav #closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            padding: 0;
+        }
+        #myNav a {
+            color: #818181;
+            text-decoration: none;
+            display: block;
+            font-size: 36px;
+            padding: 8px;
+            transition: color 0.3s;
+        }
+        #myNav a:hover {
+            color: white;
+        }
+        .overlay-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        span {
+            font-size: 30px;
+            cursor: pointer;
+        }
+        @media screen and (max-height: 450px) {
+            #myNav a {font-size: 20px}
+            #myNav #closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="myNav">
+        <a href="javascript:void(0);" id="closebtn">&times;</a>
+        <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <h2>Fullscreen Overlay Nav Example</h2>
+    <p>Click on the element below to open the fullscreen overlay navigation menu.</p>
+    <p>In this example, the navigation menu will slide downwards from the top:</p>
+    <span id="openbtn">&#9776;</span>
+    <script>
+        var myNav = document.getElementById("myNav");
+        
+        document.getElementById("openbtn").onclick = function(){
+            myNav.style.marginTop = "0";
+        }
+
+        document.getElementById("closebtn").onclick = function(){
+            myNav.style.marginTop = "-100%";
+        }
+    </script>
+</body>
+</html>

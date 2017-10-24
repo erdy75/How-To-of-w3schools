@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sidenav Full-width</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            transition: background-color 0.5s;
+        }
+        .sidenav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            padding-top: 60px;
+            transition: margin-left 0.5s;
+            margin-left: -100%;
+            text-align: center;
+        }
+        .sidenav a {
+            display: block;
+            text-decoration: none;
+            font-size: 25px;
+            padding: 8px 8px 8px 32px;
+            color: #818181;
+            transition: color 0.5s;
+        }
+        .sidenav a:hover {
+            color: white;
+        }
+        #closebtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 36px;
+            margin-right: 10px;
+        }
+        #openbtn {
+            font-size: 25px;
+            cursor: pointer;
+        }
+        #main {
+            padding: 16px;
+            transition: margin-left 0.5s;
+        }
+        @media screen and (max-height: 480px) {
+            .sidenav {
+                padding-top: 20px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+            #closebtn {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav" id="mySidenav">
+        <a href="javascript:void(0);" id="closebtn">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <div id="main">
+        <h2>Sidenav Push Example</h2>
+        <p>Click on the element below to open the side navigation menu.</p>
+        <span id="openbtn">&#9776;</span>    
+    </div>
+    <script>
+        var sidenav = document.getElementById("mySidenav");
+        
+        document.getElementById("openbtn").onclick = function(){
+            sidenav.style.marginLeft = "0";
+        };
+
+        document.getElementById("closebtn").onclick = function(){
+            sidenav.style.marginLeft = "-100%";
+        }
+    </script>
+</body>
+</html>

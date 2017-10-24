@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Right-sided Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .sidenav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #111;
+            padding-top: 60px;
+            transition: 0.5s;
+            margin-right: -200px;
+        }
+        .sidenav a {
+            display: block;
+            text-decoration: none;
+            font-size: 25px;
+            padding: 8px 8px 8px 32px;
+            color: #818181;
+            transition: 0.5s;
+        }
+        .sidenav a:hover {
+            color: white;
+        }
+        #closebtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 36px;
+            margin-right: 10px;
+        }
+        #openbtn {
+            font-size: 25px;
+            cursor: pointer;
+        }
+        @media screen and (max-height: 480px) {
+            .sidenav {
+                padding-top: 20px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+            #closebtn {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav" id="mySidenav">
+        <a href="javascript:void(0);" id="closebtn">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <h2>Right-sided Navigation</h2>
+    <p>Click on the element below to open the right-sided navigation menu.</p>
+    <span id="openbtn">&#9776;</span>
+    <script>
+        var sidenav = document.getElementById("mySidenav");
+        
+        document.getElementById("openbtn").onclick = function(){
+            sidenav.style.marginRight = "0";
+        };
+
+        document.getElementById("closebtn").onclick = function(){
+            sidenav.style.marginRight = "-200px";
+        }
+    </script>
+</body>
+</html>

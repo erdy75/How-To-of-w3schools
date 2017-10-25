@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Bottom Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .bottomnav {
+            background-color: #333;
+            overflow: hidden;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .bottomnav a {
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            float: left;
+            padding: 14px 16px;
+            color: white;
+            font-size: 17px;
+        }
+        .bottomnav a:hover {
+            background-color: white;
+            color: black;
+        }
+        .bottomnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .main {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        #switchbtn {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+        @media screen and (max-width: 480px) {
+            .bottomnav a {
+                float: none;
+                text-align: left;
+            }
+            .bottomnav a:not(:first-child) {
+                display: none;
+            }
+            #switchbtn {
+                display: block;
+            }
+            .bottomnav.responsive a{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bottomnav" id="myBottomNav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" id="switchbtn">&#9776;</a>
+    </div>
+    <div class="main">
+        <h2>Responsive Bottom Navbar Example</h2>
+        <p>Resize the browser window to see how it works.</p>
+    </div>
+    <script>
+        document.getElementById("switchbtn").onclick = function() {
+            document.getElementById("myBottomNav").classList.toggle("responsive");
+        }
+    </script>
+</body>
+</html>

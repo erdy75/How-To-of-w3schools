@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vertical Scroll Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            width: 200px;
+            background-color: #ccc;
+            height: 205px;
+            overflow: auto;
+        }
+        .menu a {
+            display: block;
+            text-align: left;
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+        .menu a:hover {
+            background-color: #ddd;
+        }
+        .menu a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vertical Scroll Menu</h1>
+    <div class="menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+        <a href="#">Link 5</a>
+        <a href="#">Link 6</a>
+        <a href="#">Link 7</a>
+        <a href="#">Link 8</a>
+        <a href="#">Link 9</a>
+        <a href="#">Link 10</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bottom Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .bottomnav {
+            background-color: #333;
+            overflow: hidden;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .bottomnav a {
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            float: left;
+            padding: 14px 16px;
+            color: white;
+            font-size: 17px;
+        }
+        .bottomnav a:hover {
+            background-color: white;
+            color: black;
+        }
+        .bottomnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .main {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bottomnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="main">
+        <h1>Bottom Navigation Bar</h1>
+        <p>Some text some text some text.</p>
+    </div>
+</body>
+</html>

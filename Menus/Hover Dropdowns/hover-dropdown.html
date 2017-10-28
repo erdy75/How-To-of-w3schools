@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hover Dropdowns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: 100%;
+        }
+        .drop-content a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 14px 16px;
+        }
+        .drop-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .drop-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="drop-content">
+            <a href="#">Link1</a>
+            <a href="#">Link2</a>
+            <a href="#">Link3</a>
+        </div>
+    </div>
+</body>
+</html>

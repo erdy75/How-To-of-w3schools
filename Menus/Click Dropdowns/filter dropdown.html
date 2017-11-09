@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search/Filter Dropdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropbtn {
+            border: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            color: white;
+            background-color: lightgreen;
+        }
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: greenyellow;
+        }
+        .dropdown-content {
+            position: absolute;
+            display: none;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 14px 16px;
+            color: black;
+            text-decoration: none;
+            background-color: #ccc;
+        }
+        .dropdown-content a:hover {
+            background-color: #aaa;
+        }
+        .show {
+            display: block;
+        }
+        #myInput {
+            background-image: url("img/searchicon.png");
+            background-position: left center;
+            background-repeat: no-repeat;
+            padding: 10px 0 10px 24px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Search/Filter Dropdown</h2>
+    <p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
+
+    <div class="dropdown">
+        <button class="dropbtn" type="button">Dropdown</button>
+        <div class="dropdown-content" id="myDropdown">
+            <input type="text" placeholder="Search" id="myInput">
+            <a href="#about">About</a>
+            <a href="#base">Base</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
+        </div>
+    </div>
+
+    <script>
+        var btn = document.getElementsByClassName("dropbtn")[0];
+        var myDropdown = document.getElementById("myDropdown");
+        btn.onclick = function() {
+            myDropdown.classList.toggle("show");
+        };
+        var input = document.getElementById("myInput");
+        myInput.onkeyup = function() {
+            var filter = myInput.value.toLowerCase();
+            var a = myDropdown.getElementsByTagName("a");
+            for (var i = 0; i < a.length; i++){
+                if (a[i].textContent.toLowerCase().indexOf(filter) < 0){
+                    a[i].style.display = "none";
+                } else {
+                    a[i].style.display = "";
+                }
+            }
+        };
+    </script>
+</body>
+</html>

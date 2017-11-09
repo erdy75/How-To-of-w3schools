@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button Group</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .btn-group {
+            /* overflow: hidden; */
+        }
+        .btn-group .btn {
+            float: left;
+            border: 1px solid green;
+            color: white;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            cursor: pointer;
+        }
+        .btn-group .btn:not(:last-child) {
+            border-right: none;
+        }
+        .btn-group .btn:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn-group">
+        <button class="btn">Apple</button>
+        <button class="btn">Samsung</button>
+        <button class="btn">Sony</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clickable Dropdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        .dropbtn {
+            border: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            color: white;
+            background-color: lightgreen;
+        }
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: greenyellow;
+        }
+        .dropdown-content {
+            position: absolute;
+            width: 100%;
+            display: none;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 14px 16px;
+            color: white;
+            text-decoration: none;
+            background-color: #ccc;
+        }
+        .dropdown-content a:hover {
+            background-color: #aaa;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Clickable Dropdown</h2>
+    <p>Click on the button to open the dropdown menu.</p>
+    <div class="dropdown">
+        <button class="dropbtn" type="button">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        var btn = document.getElementsByClassName("dropbtn")[0];
+        btn.onclick = function() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        };
+    </script>
+</body>
+</html>

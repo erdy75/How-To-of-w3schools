@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vertical Button Group</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .btn-group .btn {
+            width: 100px;
+            display: block;
+            border: 1px solid green;
+            color: white;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            cursor: pointer;
+        }
+        .btn-group .btn:not(:last-child) {
+            border-bottom: none;
+        }
+        .btn-group .btn:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn-group">
+        <button class="btn">Apple</button>
+        <button class="btn">Samsung</button>
+        <button class="btn">Sony</button>
+    </div>
+</body>
+</html>

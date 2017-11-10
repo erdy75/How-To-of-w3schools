@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automatic Slideshow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .mySlides img {
+            width: 100%;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 16px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border-radius: 0px 3px 3px 0px;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0px 0px 3px; 
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8)
+        }
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        .number-text {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin: 0px 2px;
+            cursor: pointer;
+            background-color: #bbb;
+            display: inline-block;
+            transition: all 0.5s;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        .slideshow-indicators {
+            text-align: center;
+        }
+        .fade {
+            animation: fade 1.5s;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            } to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="number-text">1 / 4</div>
+            <img src="img/img_fjords_wide.jpg">
+            <div class="text">Caption One</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="number-text">2 / 4</div>
+            <img src="img/img_lights_wide.jpg">
+            <div class="text">Caption Two</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="number-text">3 / 4</div>
+            <img src="img/img_mountains_wide.jpg">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="number-text">4 / 4</div>
+            <img src="img/img_nature_wide.jpg">
+            <div class="text">Caption Four</div>
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+    <div class="slideshow-indicators">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (slideIndex >= slides.length) {slideIndex = 0;}
+            for (i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex].style.display = "block";
+            dots[slideIndex].classList.add("active");
+            setTimeout(showSlides, 2000);
+            slideIndex++;
+        }
+    </script>
+</body>
+</html>

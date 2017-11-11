@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Modal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #myImg {
+            width: 300px;
+            height: 200px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        #myModal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding-top: 100px;
+            background-color: rgba(0,0,0,0.9);            
+        }
+
+        #img01 {
+            display: block;
+            margin: auto;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        #close {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        #close:hover, #close:focus {
+            color: #bbb;
+            cursor: pointer;
+        }
+
+        #caption {
+            color: #ccc;
+            text-align: center;
+            padding: 10px 0;
+        }
+        #img01, #caption {
+            animation: zoom 1s;
+        }
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            } to {
+                transform: scale(1);
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            #img01 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Image Modal</h2>
+    <p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+    <p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+    <img src="img/img_fjords.jpg" alt="Trolltunga, Norway" id="myImg">
+    <div id="myModal">
+        <span id="close">&times;</span>
+        <img id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        var myImg = document.getElementById("myImg");
+        myImg.onclick = function() {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("img01").src = this.src;
+            document.getElementById("caption").innerHTML = this.alt;
+        };
+
+        var close = document.getElementById("close");
+        close.onclick = function() {
+            document.getElementById("myModal").style.display = "none";
+        };
+    </script>
+</body>
+</html>

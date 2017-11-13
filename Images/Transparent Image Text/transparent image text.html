@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transparent Image Text</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            position: relative;
+            max-width: 800px;
+            min-width: 500px;
+            margin: 0 auto;
+        }
+        .container img {
+            width: 100%;
+            display: block;
+        }
+        .container .content {
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: #f1f1f1;
+            padding: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/notebook.jpg" alt="Notebook">
+        <div class="content">
+            <h1>Heading</h1>
+            <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            text-align: center;
+            padding: 32px;
+        }
+        img {
+            width: 100%;
+            margin-top: 12px;
+        }
+        .row {
+            width: 100%;
+            overflow: hidden;
+        }
+        .column {
+            width: 25%;
+            float: left;
+            padding: 10px;
+        }
+        button {
+            border: none;
+            border-radius: 5px;
+            padding: 14px 16px;
+            background-color: lightcyan;
+        }
+        button:hover {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Image Grid</h1>
+        <p>Click on the buttons to change the grid view.</p>
+        <button type="button">4</button>
+        <button type="button">2</button>
+        <button type="button">1</button>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="img/wedding.jpg">
+            <img src="img/rocks.jpg">
+            <img src="img/falls2.jpg">
+            <img src="img/paris.jpg">
+            <img src="img/nature.jpg">
+            <img src="img/mist.jpg">
+            <img src="img/paris.jpg">
+        </div>
+        <div class="column">
+            <img src="img/underwater.jpg">
+            <img src="img/ocean.jpg">
+            <img src="img/wedding.jpg">
+            <img src="img/mountainskies.jpg">
+            <img src="img/rocks.jpg">
+            <img src="img/underwater.jpg">
+        </div>
+        <div class="column">
+            <img src="img/wedding.jpg">
+            <img src="img/rocks.jpg">
+            <img src="img/falls2.jpg">
+            <img src="img/paris.jpg">
+            <img src="img/nature.jpg">
+            <img src="img/mist.jpg">
+            <img src="img/paris.jpg">
+        </div>
+        <div class="column">
+            <img src="img/underwater.jpg">
+            <img src="img/ocean.jpg">
+            <img src="img/wedding.jpg">
+            <img src="img/mountainskies.jpg">
+            <img src="img/rocks.jpg">
+            <img src="img/underwater.jpg">
+        </div>
+    </div>
+
+    <script>
+        var buttons = document.getElementsByTagName("button");
+        for (var i = 0; i < buttons.length; i++){
+            buttons[i].onclick = function(){
+                var width = 100 / this.innerHTML + "%";
+                console.log(width);
+                var columns = document.getElementsByClassName("column");
+                for (var j = 0; j < columns.length; j++){
+                    columns[j].style.width = width;
+                }
+            };
+        }
+    </script>
+</body>
+</html>

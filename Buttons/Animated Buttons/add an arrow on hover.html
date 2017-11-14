@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add An Arrow On Hover</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .button {
+            border: none;
+            padding: 14px 28px;
+            font-size: 28px;
+            color: #fff;
+            background-color: #f4511e;
+            cursor: pointer;
+            transition: all 0.5s;
+            width: 200px;
+            text-align: center;
+        }
+        .button span {
+            position: relative;
+            display: inline-block;
+            transition: all 0.5s;
+        }
+        .button span::after {
+            content: "\00bb";
+            position: absolute;
+            top: 0;
+            right: -20px;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        .button:hover span {
+            padding-right: 20px;
+        }
+        .button:hover span::after {
+            right: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h2>Animated Buttons</h2>
+    <button class="button"><span>Hover</span></button>
+</body>
+</html>

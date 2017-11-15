@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Radios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: relative;
+            display: block;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            font-size: 22px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .container input {
+            display: none;
+        }
+        .container .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+        .container:hover .checkmark {
+            background-color: #ccc;
+        }
+        .container input:checked + .checkmark {
+            background-color: #2196F3;
+        }
+        .container input:checked + .checkmark:after {
+            display: block;
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom Radio Buttons</h1>
+    <label class="container">
+        <span>One</span>
+        <input type="radio" name="radio" checked>
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        <span>Two</span>
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        <span>Three</span>
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        <span>Four</span>
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+    </label>
+</body>
+</html>

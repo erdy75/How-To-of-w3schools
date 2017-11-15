@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Checkbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            font-size: 22px;
+            user-select: none;
+        }
+        .container input {
+            display: none;
+        }
+        .checkmark {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #eee;
+        }
+        .container:hover .checkmark {
+            background-color: #ccc;
+        }
+        .container input:checked + .checkmark {
+            background-color: #2196F3;
+        }
+        .container input:checked + .checkmark:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0px 3px 3px 0px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Custom Checkboxes</h1>
+    <label class="container">
+        <span>One</span>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        <span>Two</span>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        <span>Three</span>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+    <label class="container">
+        <span>Four</span>
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+</body>
+</html>

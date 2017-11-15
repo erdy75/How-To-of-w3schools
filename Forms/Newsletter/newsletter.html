@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Newsletter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            max-width: 600px;
+            min-width: 300px;
+            margin: 0 auto;
+        }
+        .container {
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+        .form-content {
+            padding: 20px;
+        }
+        input[type=text], input[type=email], input[type=submit] {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-top: 16px;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Newsletter</h2>
+    <form>
+        <div class="container">
+            <h2>Subscribe to our Newsletter</h2>
+            <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
+        </div>
+        <div class="form-content">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email address">
+            <label>
+                <input type="checkbox" checked>
+                <span>Daily Newsletter</span>
+            </label>
+        </div>
+        <div class="container">
+            <input type="submit" value="Subscribe">
+        </div>
+    </form>
+</body>
+</html>

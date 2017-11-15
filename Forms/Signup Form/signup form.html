@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .btn {
+            color: white;
+            font-size: 18px;
+            padding: 14px 28px;
+            border: none;
+            background-color: #4CAF50;
+            cursor: pointer;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+        #modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            display: none;
+        }
+        form {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 500px;
+            min-width: 300px;
+            background-color: white;
+            padding: 20px;
+            animation: display 1s forwards;
+        }
+        @keyframes display {
+            from {
+                transform: translate(-50%, -50%) scale(0);                
+            } to {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        .img-container {
+            text-align: center;
+        }
+        .img-container img {
+            width: 40%;
+            border-radius: 50%;
+        }
+        .close {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            color: black;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: red;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        label span {
+            font-weight: bold;
+            display: block;
+            padding-bottom: 10px;
+        }
+        input[type=email], input[type=password] {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        input[type=submit] {
+            color: white;
+            background-color: #4CAF50;
+            width: 50%;
+            text-align: center;
+            padding: 14px 0;
+            border: none;
+        }
+        input[type=submit]:hover {
+            opacity: 0.8;
+        }
+        .footer {
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        .cancel {
+            color: white;
+            background-color: red;
+            padding: 14px 0px;
+            float: left;
+            width: 50%;
+            border: none;
+        }
+        .cancel:hover {
+            opacity: 0.8;
+        }
+
+        @media screen and (max-width: 600px) {
+            .cancel {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .footer span {
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Modal Signup Form</h2>
+    <button class="btn">Sign Up</button>
+
+    <div id="modal">
+        <form>
+            <span class="close">&times;</span>
+            <label>
+                <span>Email</span>
+                <input type="email" placeholder="Enter Email" required="required">
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" placeholder="Enter Password" required="required">
+            </label>
+            <label>
+                <span>Repeat Password</span>
+                <input type="password" placeholder="Repeat Password" required="required">
+            </label>
+            <label>
+                <input type="checkbox" checked="checked"> Remenber me
+            </label>
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            <div class="footer">
+                <button class="cancel">Cancel</button>
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var btn = document.getElementsByClassName("btn")[0];
+        btn.onclick = function() {
+            document.getElementById("modal").style.display = "block";
+        };
+
+        var close = document.getElementsByClassName("close")[0];
+        close.onclick = function() {
+            document.getElementById("modal").style.display = "none";
+        };
+
+        var cancel = document.getElementsByClassName("cancel")[0];
+        cancel.onclick = function() {
+            document.getElementById("modal").style.display = "none";
+        };
+
+        document.getElementById("modal").onclick = function(e) {
+            if (e.target == this) {
+                this.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>

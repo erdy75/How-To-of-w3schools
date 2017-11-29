@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        span {
+            font-weight: bold;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        th {
+            cursor: pointer;
+        }
+        th, td {
+            text-align: left;
+            padding: 16px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <p><span>Click the headers to sort the table.</span></p>
+    <p>The first time you click, the sorting direction is ascending (A to Z).</p>
+    <p>Click again, and the sorting direction will be descending (Z to A):</p>
+
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Sweden</td>
+        </tr>
+        <tr>
+            <td>North/South</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Koniglich Essen</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Italy</td>
+        </tr>
+        <tr>
+            <td>Paris specialites</td>
+            <td>France</td>
+        </tr>
+        <tr>
+            <td>Island Trading</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Canada</td>
+        </tr>
+    </table>
+
+    <script>
+        var th = document.getElementsByTagName("th");
+        for (var i = 0; i < th.length; i++) {
+            (function(j){
+                th[j].onclick = function() {
+                    sortTable(j);
+                };
+            })(i);
+        }
+
+        var toggle = true;
+
+        function sortTable(n) {
+            var table = document.getElementById("myTable");
+            var tr = table.getElementsByTagName("tr");
+            for (var i = 1; i < tr.length - 1; i++) {
+                for (j = 1; j < tr.length - i; j++) {
+                    var x = tr[j].getElementsByTagName("td")[n];
+                    var y = tr[j+1].getElementsByTagName("td")[n];
+                    if (toggle) {
+                        if (x.innerHTML >  y.innerHTML) {
+                            tr[j].parentElement.insertBefore(tr[j+1], tr[j]);
+                        }
+                    } else {
+                        if (x.innerHTML < y.innerHTML) {
+                            tr[j].parentElement.insertBefore(tr[j+1], tr[j]);
+                        }
+                    }
+                }
+            }
+            toggle = !toggle;
+        }
+    </script>
+</body>
+</html>

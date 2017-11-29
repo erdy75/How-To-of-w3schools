@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #sortBtn {
+            border: none;
+            padding: 12px 24px;
+            color: white;
+            background-color: #333;
+            cursor: pointer;
+        }
+        #sortBtn:hover {
+            opacity: 0.8;
+        }
+        #sortList {
+            list-style: none;
+            margin-top: 10px;
+        }
+        #sortList li {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        #sortList li:first-child {
+            border-top: 1px solid #ddd;
+        }
+        #sortList li:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <p>Click the button to sort the list alphabetically:</p>
+    <button id="sortBtn">Sort</button>
+    <ul id="sortList">
+        <li>Oslo</li>
+        <li>Stockholm</li>
+        <li>Helsinki</li>
+        <li>Berlin</li>
+        <li>Rome</li>
+        <li>Madrid</li>
+    </ul>
+
+    <script>
+        var sortBtn = document.getElementById("sortBtn");
+        sortBtn.onclick = function() {
+            var ul = document.getElementById("sortList");
+            var li = ul.getElementsByTagName("li");
+            for (var i = 0; i < li.length - 1; i++){
+                for (var j = 0; j < li.length - i - 1; j++) {
+                    if (li[j].innerHTML > li[j+1].innerHTML) {
+                        ul.insertBefore(li[j+1], li[j]);
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>

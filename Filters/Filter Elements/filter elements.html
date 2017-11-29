@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Elements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .filterDiv {
+            float: left;
+            background-color: #2196F3;
+            color: #ffffff;
+            width: 100px;
+            line-height: 100px;
+            text-align: center;
+            margin: 2px;
+            display: block;
+        }
+        .nodisplay {
+            display: none;
+        }
+        .container {
+            margin-top: 20px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h2>Filter Div Elements</h2>
+    <label><input type="radio" name="category" value="all" checked> Show all</label>
+    <label><input type="radio" name="category" value="cars"> Cars</label>
+    <label><input type="radio" name="category" value="animals"> Animals</label>
+    <label><input type="radio" name="category" value="fruits"> Fruits</label>
+    <label><input type="radio" name="category" value="colors"> Colors</label>
+
+    <div class="container">
+        <div class="filterDiv cars">BMW</div>
+        <div class="filterDiv colors fruits">Orange</div>
+        <div class="filterDiv cars">Volvo</div>
+        <div class="filterDiv colors">Red</div>
+        <div class="filterDiv cars animals">Mustang</div>
+        <div class="filterDiv colors">Blue</div>
+        <div class="filterDiv animals">Cat</div>
+        <div class="filterDiv animals">Dog</div>
+        <div class="filterDiv fruits">Melon</div>
+        <div class="filterDiv fruits animals">Kiwi</div>
+        <div class="filterDiv fruits">Banana</div>
+        <div class="filterDiv fruits">Lemon</div>
+        <div class="filterDiv animals">Cow</div>
+    </div>
+
+    <script>
+        var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].onclick = function() {
+                filter = this.value;
+                if (filter == "all") {
+                    filter = "filterDiv";
+                }
+                var divs = document.getElementsByClassName("filterDiv");
+                for (var i = 0; i < divs.length; i++){
+                    if (divs[i].classList.contains(filter)) {
+                        divs[i].classList.remove("nodisplay");
+                    } else {
+                        divs[i].classList.add("nodisplay");
+                    }
+                }
+            };
+        }
+    </script>
+</body>
+</html>

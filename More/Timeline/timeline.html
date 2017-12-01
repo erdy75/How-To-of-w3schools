@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #474e5d;
+            font-family: Helvetica, sans-serif;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline:after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 6px;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .container:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid #ff9f55;
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        .left:after {
+            right: 0;
+            transform: translateX(50%);
+        }
+        .right:after {
+            left: 0;
+            transform: translateX(-50%);
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left:before {
+            content: '';
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 22px;
+            right: 30px;
+            z-index: 1;
+            border-style: solid;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right:before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 22px;
+            left: 30px;
+            border-style: solid;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        @media all and (max-width: 600px) {
+            .timeline:after {
+                left: 31px;
+                transform: translateX(0);
+            }
+            .right {
+                left: 0;
+            }
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .container:before {
+                left: 60px;
+                border-style: solid;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .left:after, .right:after {
+                left: 31px;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>2017</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, earum enim fuga harum neque
+                    reiciendis soluta voluptatibus. Accusantium aliquam architecto ducimus ea, facere laboriosam,
+                    necessitatibus provident quaerat quis repudiandae veniam?</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2016</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim et laudantium quia quos veritatis.
+                    Eaque, error eum facilis, labore natus nemo numquam officiis quas quibusdam quisquam quod
+                    reprehenderit sequi voluptatum.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>2015</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cum debitis, eius, eveniet, excepturi
+                    fugit ipsum laborum minima minus modi nam quasi qui quisquam reiciendis rem rerum tenetur ullam
+                    voluptas?</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2012</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores commodi dolorem dolores
+                    doloribus eligendi enim, expedita placeat possimus qui quis quod quos ratione, reiciendis sapiente
+                    sed ut velit vero.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>2011</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aliquid architecto aspernatur
+                    assumenda atque blanditiis consequuntur, et ex excepturi libero natus necessitatibus nemo nihil
+                    nobis quisquam quo reprehenderit sit, voluptatem!</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2007</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eius illum itaque libero voluptas.
+                    Animi distinctio est facilis fuga iure magnam molestias natus odio odit quisquam sit tempore
+                    temporibus, vitae.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

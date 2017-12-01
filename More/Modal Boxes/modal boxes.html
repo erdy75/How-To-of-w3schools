@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Boxes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #myModal {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            display: none;
+            animation: animateModalContainer 1s forwards;
+        }
+        @keyframes animateModalContainer {
+            from {
+                top: -100%;
+            }
+            to {
+                top: 0;
+            }
+        }
+        .modal-content {
+            position: absolute;
+            left: 50%;
+            top: -100%;
+            width: 60%;
+            background-color: #fefefe;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+            animation: animateTop 1s forwards;
+        }
+        @keyframes animateTop {
+            from {
+                top: -100%;
+                transform: translate(-50%, 0%);
+            }
+            to {
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,.close:focus {
+            color: #000;
+            cursor: pointer;
+        }
+        .modal-header, .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+        .modal-body {
+            padding: 2px 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Animated Modal with Header and Footer</h2>
+    <button id="myBtn">Open Modal</button>
+
+    <div id="myModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio hic impedit nam possimus saepe
+                    vitae voluptas voluptatibus. Architecto, corporis debitis distinctio perspiciatis praesentium
+                    reprehenderit repudiandae rerum tempora! Asperiores cumque, doloremque?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, consectetur culpa deserunt excepturi
+                    expedita illum, ipsam maxime natus nihil odio provident repellat repudiandae suscipit totam vitae.
+                    Deserunt eos exercitationem ut.</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var close = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        };
+        close.onclick = function() {
+            modal.style.display = "none";
+        };
+        modal.onclick = function(e) {
+            if (e.target === this) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+        #myBar {
+            width: 1%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            margin: 10px 0;
+        }
+        #myBtn {
+            border: none;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        #myBtn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Progress Bar</h1>
+
+    <div id="myProgress">
+        <div id="myBar">1%</div>
+    </div>
+
+    <button id="myBtn">Run</button>
+
+    <script>
+        var btn = document.getElementById("myBtn");
+        var bar = document.getElementById("myBar");
+        btn.onclick = function() {
+            var id = setInterval(run, 50);
+            var width = 1;
+            function run() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    bar.style.width = width + "%";
+                    bar.innerHTML = width + "%";
+                }
+            }
+        };
+    </script>
+</body>
+</html>

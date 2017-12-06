@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Chips</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .chip {
+            display: inline-block;
+            padding: 0 25px;
+            height: 50px;
+            font-size: 18px;
+            line-height: 50px;
+            border-radius: 25px;
+            background-color: #f1f1f1;
+        }
+        .chip img {
+            float: left;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+        #closeBtn {
+            padding-left: 10px;
+            color: #888;
+            font-weight: bold;
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #closeBtn:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <p>Click on the "x" symbol to delete the contact.</p>
+    <div class="chip">
+        <img src="img/img_avatar.png" alt="Person">
+        John Doe
+        <span id="closeBtn">&times;</span>
+    </div>
+
+    <script>
+        document.getElementById("closeBtn").onclick = function() {
+            this.parentElement.style.display = "none";
+        };
+    </script>
+</body>
+</html>

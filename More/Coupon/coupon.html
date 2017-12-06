@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coupon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .coupon {
+            border: 5px dotted #bbb;
+            width: 80%;
+            border-radius: 15px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .coupon img {
+            width: 100%;
+        }
+        .container {
+            padding: 20px 16px;
+            background-color: #f1f1f1;
+        }
+        .container:nth-of-type(2) {
+            background-color: white;
+        }
+        .container > h2 {
+            margin-bottom: 20px;
+        }
+        .promo {
+            background-color: #ccc;
+            padding: 3px;
+        }
+        .expire {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="coupon">
+        <div class="container">
+            <h3>Company Logo</h3>
+        </div>
+        <img src="img/hamburger.jpg" alt="Avatar">
+        <div class="container">
+            <h2>20% OFF YOUR PURCHASE</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquid assumenda atque
+                consequatur fugiat fugit inventore, maxime mollitia officiis perferendis perspiciatis quae quod, rem
+                similique temporibus tenetur voluptatem? Adipisci, quis?</p>
+        </div>
+        <div class="container">
+            <p>Use Promo Code: <span class="promo">BOH232</span></p>
+            <p class="expire">Expires: Jan 03, 2017</p>
+        </div>
+    </div>
+</body>
+</html>

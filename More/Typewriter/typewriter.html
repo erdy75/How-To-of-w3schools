@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typewriter</title>
+</head>
+<body>
+    <h1>TypeWriter</h1>
+    <button id="myBtn">Click me</button>
+    <p id="demo"></p>
+
+    <script>
+        var i = 0;
+        var txt = 'Lorem ipsum dummy text blabla.';
+        var speed = 50;
+        function Typewrite() {
+            document.getElementById("demo").innerHTML += txt[i++];
+            if (i < txt.length) {
+                setTimeout(Typewrite, speed);
+            }
+        }
+        document.getElementById("myBtn").onclick = Typewrite;
+    </script>
+</body>
+</html>

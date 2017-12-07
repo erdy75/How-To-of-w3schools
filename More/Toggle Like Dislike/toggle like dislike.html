@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle Like Dislike</title>
+    <link rel="stylesheet" href="../../font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .fa {
+            font-size: 50px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .fa:hover {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <p>Click on the icon toggle between thumbs-up and thumbs-down(like/dislike):</p>
+    <i class="fa fa-thumbs-up" id="like"></i>
+
+    <script>
+        document.getElementById("like").onclick = function() {
+            this.classList.toggle("fa-thumbs-down");
+        };
+    </script>
+</body>
+</html>

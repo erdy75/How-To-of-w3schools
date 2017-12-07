@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draggable HTML Element</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #mydiv {
+            position: absolute;
+            background-color: #f1f1f1;
+            text-align: center;
+            border: 1px solid #d3d3d3;
+        }
+        #mydivheader {
+            padding: 10px;
+            cursor: move;
+            background-color: #2196F3;
+            color: #fff;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Draggable HTML Element</h1>
+
+    <p>Click and hold the mouse button down while moving the DIV element.</p>
+
+    <div id="mydiv">
+        <div id="mydivheader">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <script>
+        document.getElementById("mydivheader").onmousedown = function(event) {
+            var mydiv = document.getElementById("mydiv");
+            var e = event || window.event;
+            var leftLength = e.clientX - mydiv.offsetLeft;
+            var topLength = e.clientY - mydiv.offsetTop;
+
+            document.onmousemove = function(event) {
+                var e = event || window.event;
+                mydiv.style.left = e.clientX - leftLength + "px";
+                mydiv.style.top = e.clientY - topLength + "px";
+            };
+            document.onmouseup = function() {
+                document.onmousemove = null;
+            };
+        };
+    </script>
+</body>
+</html>
